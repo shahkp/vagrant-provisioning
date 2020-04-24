@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nodeapp
+  labels:
+    app: any-label 
+spec:
+  containers:
+    - name: nodeapp
+      image: shahkp/mynginx
+      ports:
+        - containerPort: 80
+

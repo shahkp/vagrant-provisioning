@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nodeapp
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      - {key: app, operator: In, values: [nginx-label]}
+  template:
+    metadata:
+      name: nodeapp
+      labels:
+        app: nginx-label
+    spec:
+      containers:
+      - name: nodeapp
+        image: nginx
+        ports:
+        - containerPort: 80
+

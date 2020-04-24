@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: nodeapp
+spec:
+  selector:
+    app: any-label
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: NodePort   
+
